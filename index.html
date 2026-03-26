@@ -147,13 +147,14 @@ body{font-family:'Barlow',sans-serif;color:var(--text);background:var(--off-whit
 .service-item p{color:rgba(255,255,255,.55);font-size:.88rem;margin:0;line-height:1.5}
 
 /* PORTFOLIO */
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-@media(min-width:640px){.portfolio-grid{gap:12px}}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:640px){.portfolio-grid{grid-template-columns:repeat(3,1fr);gap:12px}}
 .portfolio-item{
   aspect-ratio:1;border-radius:6px;overflow:hidden;
   position:relative;background:#1a1a1a;
 }
 .portfolio-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+@media(max-width:639px){.portfolio-item-featured{grid-column:span 2;aspect-ratio:16/9}}
 .portfolio-item:hover img{transform:scale(1.05)}
 
 /* REVIEWS */
@@ -357,7 +358,7 @@ textarea{resize:vertical;min-height:100px}
     <div class="divider"></div>
     <p class="section-subtitle">A selection of recent jobs completed across Orange and the Central West.</p>
     <div class="portfolio-grid" style="margin-top:32px">
-      <div class="portfolio-item"><img src="images/work-1.jpg" alt="Peakey's Plumbing work"></div>
+      <div class="portfolio-item portfolio-item-featured"><img src="images/work-1.jpg" alt="Peakey's Plumbing work"></div>
       <div class="portfolio-item"><img src="images/work-2.jpg" alt="Peakey's Plumbing work"></div>
       <div class="portfolio-item"><img src="images/work-3.jpg" alt="Peakey's Plumbing work"></div>
       <div class="portfolio-item"><img src="images/work-4.jpg" alt="Peakey's Plumbing work"></div>
@@ -507,7 +508,7 @@ textarea{resize:vertical;min-height:100px}
       <div style="font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.9">
         <div style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:800;color:white;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Contact</div>
         <div>📞 <a href="tel:0428736887" class="footer-link">0428 736 887</a></div>
-        <div>✉️ <a href="mailto:peakeysplumbing@gmail.com" class="footer-link">peakeysplumbing@gmail.com</a></div>
+        <div>✉️ <a href="/cdn-cgi/l/email-protection#0a7a6f6b616f73797a667f676863646d4a6d676b636624696567" class="footer-link"><span class="__cf_email__" data-cfemail="aadacfcbc1cfd3d9dac6dfc7c8c3c4cdeacdc7cbc3c684c9c5c7">[email&#160;protected]</span></a></div>
         <div>📍 11 Racecourse Rd, Orange NSW 2800</div>
       </div>
       <div style="font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.9">
@@ -530,7 +531,7 @@ textarea{resize:vertical;min-height:100px}
 </a>
 <div class="mobile-call-spacer"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
 window.scrollReviews = function(dir) {
@@ -572,13 +573,4 @@ window.scrollReviews = function(dir) {
 })();
 
 function handleForm(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit');
-  btn.textContent = '\u2713 Request Sent! Hayden will be in touch.';
-  btn.style.background = '#34c759';
-  btn.style.color = 'white';
-  btn.disabled = true;
-}
-</script>
-</body>
-</html>
+  e.

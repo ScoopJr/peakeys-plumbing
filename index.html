@@ -154,7 +154,12 @@ body{font-family:'Barlow',sans-serif;color:var(--text);background:var(--off-whit
   position:relative;background:#1a1a1a;
 }
 .portfolio-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-@media(max-width:639px){.portfolio-item-featured{grid-column:span 2;aspect-ratio:16/9}}
+@media(max-width:639px){
+  .port-full{grid-column:span 2}
+  .port-full{aspect-ratio:16/9}
+  .port-last{aspect-ratio:16/9}
+}
+
 .portfolio-item:hover img{transform:scale(1.05)}
 
 /* REVIEWS */
@@ -358,12 +363,12 @@ textarea{resize:vertical;min-height:100px}
     <div class="divider"></div>
     <p class="section-subtitle">A selection of recent jobs completed across Orange and the Central West.</p>
     <div class="portfolio-grid" style="margin-top:32px">
-      <div class="portfolio-item portfolio-item-featured"><img src="images/work-1.jpg" alt="Peakey's Plumbing work"></div>
+      <div class="portfolio-item port-full"><img src="images/work-1.jpg" alt="Peakey's Plumbing work"></div>
       <div class="portfolio-item"><img src="images/work-2.jpg" alt="Peakey's Plumbing work"></div>
       <div class="portfolio-item"><img src="images/work-3.jpg" alt="Peakey's Plumbing work"></div>
       <div class="portfolio-item"><img src="images/work-4.jpg" alt="Peakey's Plumbing work"></div>
       <div class="portfolio-item"><img src="images/work-5.jpg" alt="Peakey's Plumbing work"></div>
-      <div class="portfolio-item"><img src="images/work-6.jpg" alt="Peakey's Plumbing work"></div>
+      <div class="portfolio-item port-full port-last"><img src="images/work-6.jpg" alt="Peakey's Plumbing work"></div>
     </div>
     <p style="font-size:.82rem;color:#aaa;margin-top:12px;text-align:center">📸 Follow us on <a href="https://www.instagram.com/peakeys_plumbing/" target="_blank" style="color:var(--cyan)">Instagram</a> for more</p>
   </div>
@@ -573,4 +578,13 @@ window.scrollReviews = function(dir) {
 })();
 
 function handleForm(e) {
-  e.
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.textContent = '✓ Request Sent! Hayden will be in touch.';
+  btn.style.background = '#34c759';
+  btn.style.color = 'white';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>
